@@ -1,1 +1,1 @@
-# windows-project
+Educational and comercial project using Webpack and Sass
