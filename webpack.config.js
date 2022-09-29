@@ -25,7 +25,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: "index.html",
       template: path.resolve(__dirname, 'src', 'index.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "russian-version.html",
+      template: path.resolve(__dirname, 'src', 'russian-version.html'),
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',

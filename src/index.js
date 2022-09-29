@@ -1,4 +1,5 @@
 import './index.html';
+import './russian-version.html'
 import './index.scss';
 import { validate } from './modules/validate';
 import './modules/windows-slider';
