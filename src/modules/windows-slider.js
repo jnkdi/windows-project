@@ -14,10 +14,24 @@ function windowsRange() {
     const cardWidth = Number(windowsCardWidth.slice(0, windowsCardWidth.length - 2));
     windowsi= rangeWindows.value - 1;
     console.log(rangeWindows.value);
-    if(windowsi< 7) { 
-      windowsOffset = -(windowsi) * (cardWidth + 40);
-      windows.style.left = windowsOffset + 'px';
-      console.log(cardWidth);
+    if (window.innerWidth >= 1366) {
+      if(windowsi< 6) { 
+        windowsOffset = -(windowsi) * (cardWidth + 40);
+        windows.style.left = windowsOffset + 'px';
+        console.log(cardWidth);
+      }
+    } else if (window.innerWidth <= 320) {
+      if(windowsi< 7) { 
+        windowsOffset = -(windowsi) * (cardWidth + 20);
+        windows.style.left = windowsOffset + 'px';
+        console.log(cardWidth);
+      }
+    } else {
+      if(windowsi< 7) { 
+        windowsOffset = -(windowsi) * (cardWidth + 40);
+        windows.style.left = windowsOffset + 'px';
+        console.log(cardWidth);
+      }
     }
     windowsArr.forEach((e) => {
       e.classList.remove('windows-portfolio-slider-active-card');
@@ -31,7 +45,14 @@ function windowsNext() {
     const windowsCardWidth = window.getComputedStyle(windowsCard).width;
     const cardWidth = Number(windowsCardWidth.slice(0, windowsCardWidth.length - 2));
     windowsi++;
-    windowsOffset -= (cardWidth + 40); //img width
+    if (window.innerWidth >= 1366) {
+      if (windowsi < 6) {
+        windowsOffset -= (cardWidth + 40); //img width
+      }
+    } else {
+      windowsOffset -= (cardWidth + 40); //img width
+    }
+    
     if(windowsi> 6) {
       windowsi= 0;
       windowsOffset = 0;
@@ -51,8 +72,17 @@ function windowsPrev() {
     const windowsCardWidth = window.getComputedStyle(windowsCard).width;
     const cardWidth = Number(windowsCardWidth.slice(0, windowsCardWidth.length - 2));
     windowsi--;
-    windowsOffset += (cardWidth + 40); //img width
-    if(windowsi< 0) {
+    if (window.innerWidth >= 1366 ) {
+      if (windowsi > 0) {
+        windowsOffset += (cardWidth + 40); //img width
+      }
+    } else {
+      if (windowsi > 0) {
+        windowsOffset += (cardWidth + 40); //img width
+      }
+    }
+
+    if (windowsi< 0) {
       windowsi= 6;
       windowsOffset = -6 * (cardWidth + 40);
     }

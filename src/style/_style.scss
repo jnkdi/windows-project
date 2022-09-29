@@ -183,10 +183,10 @@ html {
       .windows-portfolio-slider-active-card::after {
         content:"";
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 20%;
         background:rgba(0, 0, 0, 0.5);
       }
       
@@ -207,10 +207,10 @@ html {
       .windows-portfolio-slider-card:hover::after {
         content:"";
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
-        width: 580px;
-        height: 400px;
+        width: 100%;
+        height: 20%;
         background:rgba(0, 0, 0, 0.5);
       }
 
@@ -329,10 +329,10 @@ html {
       .systems-portfolio-slider-active-card::after {
         content:"";
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 20%;
         background:rgba(0, 0, 0, 0.5);
       }
       
@@ -353,10 +353,10 @@ html {
       .systems-portfolio-slider-card:hover::after {
         content:"";
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
-        width: 580px;
-        height: 400px;
+        width: 100%;
+        height: 20%;
         background:rgba(0, 0, 0, 0.5);
       }
 
