@@ -13,24 +13,21 @@ function windowsRange() {
     const windowsCardWidth = window.getComputedStyle(windowsCard).width;
     const cardWidth = Number(windowsCardWidth.slice(0, windowsCardWidth.length - 2));
     windowsi= rangeWindows.value - 1;
-    console.log(rangeWindows.value);
     if (window.innerWidth >= 1366) {
       if(windowsi< 6) { 
         windowsOffset = -(windowsi) * (cardWidth + 40);
         windows.style.left = windowsOffset + 'px';
-        console.log(cardWidth);
       }
-    } else if (window.innerWidth <= 320) {
+    } else if (window.innerWidth <= 768) {
       if(windowsi< 7) { 
         windowsOffset = -(windowsi) * (cardWidth + 20);
         windows.style.left = windowsOffset + 'px';
-        console.log(cardWidth);
+        console.log(windowsOffset);
       }
     } else {
       if(windowsi< 7) { 
         windowsOffset = -(windowsi) * (cardWidth + 40);
         windows.style.left = windowsOffset + 'px';
-        console.log(cardWidth);
       }
     }
     windowsArr.forEach((e) => {
@@ -38,7 +35,6 @@ function windowsRange() {
     });
     windowsArr[windowsi].classList.add('windows-portfolio-slider-active-card');
     windowsCounter.innerHTML = '0' + (windowsi+ 1) + '/';
-    console.log('range');
   }
 
 function windowsNext() {
@@ -65,7 +61,6 @@ function windowsNext() {
     windowsCounter.innerHTML = '0' + (windowsi+ 1) + '/';
     rangeWindows.value = windowsi+ 1;
     windowsArr[windowsi].classList.add('windows-portfolio-slider-active-card');
-    console.log('next');
 }
 
 function windowsPrev() {
@@ -94,7 +89,6 @@ function windowsPrev() {
     windowsCounter.innerHTML = '0' + (windowsi+ 1) + '/';
     rangeWindows.value = windowsi+ 1;
     windowsArr[windowsi].classList.add('windows-portfolio-slider-active-card');
-    console.log('prev');
 }
 
 nextWindows.addEventListener('click', windowsNext);

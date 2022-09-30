@@ -13,27 +13,20 @@ function systemsRange() {
     const systemsCardWidth = window.getComputedStyle(systemsCard).width;
     const cardWidth = Number(systemsCardWidth.slice(0, systemsCardWidth.length - 2));
     systemsi = rangesystems.value - 1;
-    console.log(rangesystems.value);
     if (window.innerWidth >= 1366) {
       if(systemsi < 6) { // for static first images + limit
         systemsOffset = -(systemsi) * (cardWidth + 40);
         systems.style.left = systemsOffset + 'px';
-        console.log(cardWidth);
-        console.log(window.innerWidth);
       }
-    } else if (window.innerWidth <= 320) {
-      if(systemsi < 7) { // for static first images + limit
-        systemsOffset = -(systemsi) * (cardWidth + 60);
-        systems.style.left = systemsOffset + 'px';
-        console.log(cardWidth);
-        console.log(window.innerWidth);
-      }
-    } else {
+    } else if (window.innerWidth <= 768) {
       if(systemsi < 7) { // for static first images + limit
         systemsOffset = -(systemsi) * (cardWidth + 20);
         systems.style.left = systemsOffset + 'px';
-        console.log(cardWidth);
-        console.log(window.innerWidth);
+      }
+    } else {
+      if(systemsi < 7) { // for static first images + limit
+        systemsOffset = -(systemsi) * (cardWidth + 40);
+        systems.style.left = systemsOffset + 'px';
       }
     }
     systemsArr.forEach((e) => {
@@ -41,7 +34,6 @@ function systemsRange() {
     });
     systemsArr[systemsi].classList.add('systems-portfolio-slider-active-card');
     systemsCounter.innerHTML = '0' + (systemsi+ 1) + '/';
-    console.log('range');
   }
 
 function systemsNext() {
@@ -68,7 +60,6 @@ function systemsNext() {
     systemsCounter.innerHTML = '0' + (systemsi + 1) + '/';
     rangesystems.value = systemsi + 1;
     systemsArr[systemsi].classList.add('systems-portfolio-slider-active-card');
-    console.log('next');
 }
 
 function systemsPrev() {
@@ -95,7 +86,6 @@ function systemsPrev() {
     systemsCounter.innerHTML = '0' + (systemsi+ 1) + '/';
     rangesystems.value = systemsi+ 1;
     systemsArr[systemsi].classList.add('systems-portfolio-slider-active-card');
-    console.log('prev');
 }
 
 nextsystems.addEventListener('click', systemsNext);
