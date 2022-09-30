@@ -102,6 +102,12 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.php$/,
+        use: {
+          loader: 'php-loader',
+        }
+      },
     ],
   },
 };

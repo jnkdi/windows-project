@@ -654,9 +654,13 @@ html {
                 text-transform: uppercase;
                 letter-spacing: 3px;
             }
-        
+
             .input_field{
                 margin-bottom: 10px;
+
+                .error {
+                    box-shadow: 0 0 10px red;
+                }
             }
         
             .input_field .form-contacts,
@@ -669,8 +673,37 @@ html {
                 resize: none;
                 height: 80px;
             }
+
+            #myform {
+                .btn {
+                    position: relative;
+    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 7px;
+                        right: 0;
+                        width: 20%;
+                        height: 100%;
+                        background: url(img/loading.gif) center / 30px no-repeat;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all 0.5s ease 0s;
+                    }
+                }
+
+                &.sending {
+                    .btn {
+                        &::after {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
             
             .btn input[type="submit"]{
+                position: relative;
                 border: 0px;
                 margin-top: 15px;
                 padding: 10px;
@@ -683,6 +716,7 @@ html {
                 font-weight: bold;
                 border-radius: 25px;
                 cursor: pointer;
+
             }
           }
           

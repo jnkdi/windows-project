@@ -1,11 +1,11 @@
 import './index.html';
 import './russian-version.html'
 import './index.scss';
-import { validate } from './modules/validate';
+import './modules/validate';
 import './modules/windows-slider';
 import './modules/systems-slider';
 import './modules/burger';
 
-const submitButton = document.querySelector('.submit-button');
+// const submitButton = document.querySelector('.submit-button');
 
-submitButton.addEventListener('click', validate);
+// submitButton.addEventListener('click', validate);

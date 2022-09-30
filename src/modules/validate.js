@@ -1,27 +1,70 @@
-export function validate(){
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
-    const error_message = document.getElementById("error_message");
-    
-    error_message.style.padding = "10px";
-    
-    let text;
-    if(name.length < 5){
-      text = "Please Enter valid Name";
-      error_message.innerHTML = text;
-      return false;
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('myform');
+
+  form.addEventListener('submit', formSend);
+
+  async function formSend(e) {
+    e.preventDefault();
+
+    let error = formValidate(form);
+
+    let formData = new FormData(form);
+
+    if (error == 0) {
+      form.classList.add('sending');
+      let response = await fetch('sendmail.php', {
+        method: 'POST',
+        body: formData
+      });
+      if (response.ok) {
+        let result = await response.json();
+        alert(results.message);
+        form.reset();
+        form.classList.remove('sending');
+      } else {
+        alert('Ошибка');
+        form.classList.remove('sending');
+      }
+    } else {
+      alert('Заполните обязательные поля');
+      console.log(error);
     }
-    if(isNaN(phone) || phone.length != 10){
-      text = "Please Enter valid Phone Number";
-      error_message.innerHTML = text;
-      return false;
-    }
-    if(email.indexOf("@") == -1 || email.length < 6){
-      text = "Please Enter valid Email";
-      error_message.innerHTML = text;
-      return false;
-    }
-    alert("Form Submitted Successfully!");
-    return true;
   }
+
+  function formValidate(form) {
+    let error = 0;
+    let formReq = document.querySelectorAll('.req');
+
+    for (let i = 0; i < formReq.length; i++) {
+      const input = formReq[i];
+
+      formRemoveError(input);
+      if (input.classList.contains('email')) {
+        if (emailTest(input)) {
+          formAddError(input);
+          error++;
+        }
+      } else {
+        if (input.value === '') {
+          formAddError(input);
+          error++;
+        }
+      }
+    }
+    return error;
+  }
+
+  function formAddError(input) {
+    input.parentElement.classList.add('error');
+    input.classList.add('error');
+  }
+
+  function formRemoveError(input) {
+    input.parentElement.classList.remove('error');
+    input.classList.remove('error');
+  }
+
+  function emailTest(input) {
+    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+  }
+})
