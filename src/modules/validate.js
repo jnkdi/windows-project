@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       if (response.ok) {
         let result = await response.json();
-        alert(results.message);
+        alert(result.message);
         form.reset();
         form.classList.remove('sending');
       } else {
