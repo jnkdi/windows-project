@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Windows</title>
+  <meta name="description" content="Компания, занимающаяся установкой металлопластиковых окон и раздвижных систем">
+  <meta name="keywords" content="Окна, металлопластик, металлопластиковые окна, раздвижки, раздвижные системы, остекление, Киев, Modern Glass, Modern Windows">
+  <title>Modern Windows - Металлопластиковые окна и раздвижные системы в Киеве</title>
 </head>
 <body>
   <header class="header">
@@ -16,7 +17,7 @@
       </button>
       <nav class="nav-panel">
         <ul class="header-nav">
-          <li class="nav-item"><a href="#windows-portfolio">Окна</a></li>
+          <li class="nav-item"><a href="#windows-portfolio">Металлопластиковые окна</a></li>
           <li class="nav-item"><a href="#partners">Наши партнёры</a></li>
           <li class="nav-item"><a href="#systems-portfolio">Раздвижные системы</a></li>
           <li class="nav-item"><a href="#services">Порядок выполнения</a></li>
@@ -32,15 +33,15 @@
     <section class="home" id="home">
       <div class="home-wrapper">
         <div class="home-text">
-          <h1>Окна и раздвижные системы</h1>
-          <p>Мы, компания <span>Modern Glass Solution</span>, много лет занимаемся остеклением в Киеве и будем рады порадовать вас своими услугами</p>
+          <h1>Металлопластиковые окна и раздвижные системы</h1>
+          <p>Мы, компания <span>Modern Glass Solution</span>, много лет занимаемся остеклением в Киеве и будем рады предоставить вам свои услуги</p>
         </div>
       </div>
     </section>
     <section class="windows-portfolio" id="windows-portfolio">
       <div class="windows-portfolio-wrapper">
         <div class="windows-portfolio-text">
-          <h2 class="windows-portfolio-title">Окна</h2>
+          <h2 class="windows-portfolio-title">Металлопластиковые окна</h2>
         </div>
         <div class="windows-portfolio-slider">
           <div class="arrow-container">
@@ -265,21 +266,21 @@
       <div class="feedback-form">
         <h2>Свяжитесь с нами</h2>
         <div id="error_message"></div>
-        <form action="" id="myform" onsubmit = "return validate();">
+        <form action="#" id="form" class="form_body">
           <div class="input_field">
-              <input class="form-contacts" type="text" placeholder="Имя" id="name">
+              <input class="form-contacts req" type="text" placeholder="Имя" id="name" name="name">
           </div>
           <div class="input_field">
-              <input class="form-contacts" type="text" placeholder="Телефон" id="phone">
+              <input class="form-contacts req" type="text" placeholder="Телефон" id="phone" name="phone">
           </div>
           <div class="input_field">
-              <input class="form-contacts" type="text" placeholder="Электронная почта" id="email">
+              <input class="form-contacts req email" type="text" placeholder="Электронная почта" id="email" name="email">
           </div>
           <div class="input_field">
-              <textarea placeholder="Ваше сообщение" id="message"></textarea>
+              <textarea class="req" placeholder="Ваше сообщение" id="message" name="message"></textarea>
           </div>
           <div class="btn">
-              <input type="submit" class="submit-button" value="отправить">
+              <input type="submit" class="form__button" value="отправить">
           </div>
         </form>
       </div>
