@@ -32,6 +32,62 @@ module.exports = {
       filename: "russian-version.html",
       template: path.resolve(__dirname, 'src', 'russian-version.html'),
     }),
+    new HtmlWebpackPlugin({
+      filename: "aluminium-systems.html",
+      template: path.resolve(__dirname, 'src/pages/', 'aluminium-systems.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "aluminium-systems-RU.html",
+      template: path.resolve(__dirname, 'src/pages/', 'aluminium-systems-RU.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-10.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-10.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-10-RU.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-10-RU.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-38.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-38.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-38-RU.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-38-RU.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-46.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-46.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-46-RU.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-46-RU.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-46-m.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-46-m.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-46-m-RU.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-46-m-RU.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-FT-69.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-FT-69.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-FT-69-RU.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-FT-69-RU.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-FT-72.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-FT-72.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "framex-FT-72-RU.html",
+      template: path.resolve(__dirname, 'src/pages/', 'framex-FT-72-RU.html'),
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),

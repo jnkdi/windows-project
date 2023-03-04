@@ -88,6 +88,8 @@ function systemsPrev() {
     systemsArr[systemsi].classList.add('systems-portfolio-slider-active-card');
 }
 
-nextsystems.addEventListener('click', systemsNext);
-prevsystems.addEventListener('click', systemsPrev);
-rangesystems.addEventListener('input', systemsRange);
+if(nextsystems && prevsystems && rangesystems) {
+  nextsystems.addEventListener('click', systemsNext);
+  prevsystems.addEventListener('click', systemsPrev);
+  rangesystems.addEventListener('input', systemsRange);
+}

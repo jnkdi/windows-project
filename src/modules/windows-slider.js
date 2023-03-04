@@ -91,6 +91,8 @@ function windowsPrev() {
     windowsArr[windowsi].classList.add('windows-portfolio-slider-active-card');
 }
 
-nextWindows.addEventListener('click', windowsNext);
-prevWindows.addEventListener('click', windowsPrev);
-rangeWindows.addEventListener('input', windowsRange);
+if(nextWindows && prevWindows && rangeWindows) {
+  nextWindows.addEventListener('click', windowsNext);
+  prevWindows.addEventListener('click', windowsPrev);
+  rangeWindows.addEventListener('input', windowsRange);
+}
