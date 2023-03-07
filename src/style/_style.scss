@@ -74,7 +74,7 @@ html {
 .home {
     margin-top: $header-height;
     background-image: url(img/home-background.jpg);
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -626,6 +626,20 @@ html {
     }
 }
 
+.main-site {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px 40px;
+    border-radius: 10px 0 0 0;
+    z-index: 3;
+    background-color: $primary-dark;
+    color: $primary-light;
+    font-family: 'SansSerif-Regular';
+    font-size: 24px;
+    letter-spacing: -1px;
+}
+
 .footer {
     background-color: $secondary-dark;
     font-family: 'SansSerif-Regular';
@@ -849,6 +863,32 @@ html {
         }
     }
 
+    .contacts {
+        .contacts-wrapper {
+            height: auto;
+            .contacts-description {
+                display: none;
+            }
+
+            .contacts-block {
+                flex-direction: column;
+            }
+
+            .contacts-item {
+                margin-bottom: 20px;
+            }
+
+            .contacts-icon {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .main-site {
+        font-size: 18px;
+        padding: 10px 30px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -921,6 +961,15 @@ html {
         }
     }
     
+}
+
+@media (max-width: 425px) {
+    .main-site {
+        width: 100%;
+        padding: 5px 20px;
+        text-align: center;
+        border-radius: 0;
+    }
 }
 
 @keyframes top {
